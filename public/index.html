@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Talks Today</title>
+    <style>body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+#search {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.schedule {
+  list-style-type: none;
+  padding: 0;
+}
+
+.schedule-item {
+  background: #f9f9f9;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border-left: 5px solid #007bff;
+}
+
+.schedule-item h3 {
+  margin-top: 0;
+}
+
+.schedule-item p {
+  margin: 5px 0;
+}
+
+.schedule-item .time {
+  font-weight: bold;
+}
+
+.schedule-item .categories {
+  font-style: italic;
+  color: #555;
+}
+.hidden {
+  display: none;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tech Talks Today</h1>
+        <h2>Event Schedule</h2>
+        <input type="text" id="search" placeholder="Search by category...">
+        <ul class="schedule">
+            
+        <li class="schedule-item" data-categories="JavaScript, Web Development">
+            <div class="time">10:00 AM - 11:00 AM</div>
+            <h3>The Future of JavaScript</h3>
+            <p><strong>Speakers:</strong> Jane Doe</p>
+            <p>An in-depth look at the upcoming features of JavaScript and how they will shape the future of web development.</p>
+            <p class="categories">Categories: JavaScript, Web Development</p>
+        </li>
+    
+        <li class="schedule-item" data-categories="Node.js, API, Backend">
+            <div class="time">11:10 AM - 12:10 PM</div>
+            <h3>Building Scalable APIs with Node.js</h3>
+            <p><strong>Speakers:</strong> John Smith</p>
+            <p>Learn how to design and build APIs that can handle millions of requests, using Node.js and best practices.</p>
+            <p class="categories">Categories: Node.js, API, Backend</p>
+        </li>
+    
+        <li class="schedule-item" data-categories="CSS, Frontend, Web Design">
+            <div class="time">12:20 PM - 01:20 PM</div>
+            <h3>Modern CSS for Modern Web</h3>
+            <p><strong>Speakers:</strong> Emily White, David Green</p>
+            <p>A session on the latest CSS features and how to use them to create beautiful and responsive user interfaces.</p>
+            <p class="categories">Categories: CSS, Frontend, Web Design</p>
+        </li>
+    
+            <li class="schedule-item break">
+                <div class="time">01:30 PM - 02:30 PM</div>
+                <h3>Lunch Break</h3>
+            </li>
+        
+        <li class="schedule-item" data-categories="AI, Machine Learning">
+            <div class="time">02:30 PM - 03:30 PM</div>
+            <h3>AI in Everyday Applications</h3>
+            <p><strong>Speakers:</strong> Michael Black</p>
+            <p>Discover how AI is being integrated into everyday applications and what it means for developers and users.</p>
+            <p class="categories">Categories: AI, Machine Learning</p>
+        </li>
+    
+        <li class="schedule-item" data-categories="Debugging, Developer Tools">
+            <div class="time">03:40 PM - 04:40 PM</div>
+            <h3>The Art of Debugging</h3>
+            <p><strong>Speakers:</strong> Sarah Brown</p>
+            <p>A practical guide to debugging with tips and tricks to find and fix bugs faster.</p>
+            <p class="categories">Categories: Debugging, Developer Tools</p>
+        </li>
+    
+        <li class="schedule-item" data-categories="Cybersecurity, IoT, Security">
+            <div class="time">04:50 PM - 05:50 PM</div>
+            <h3>Cybersecurity in the Age of IoT</h3>
+            <p><strong>Speakers:</strong> Chris Blue</p>
+            <p>Exploring the security challenges of the Internet of Things and how to build secure IoT applications.</p>
+            <p class="categories">Categories: Cybersecurity, IoT, Security</p>
+        </li>
+    
+        </ul>
+    </div>
+    <script>document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.getElementById('search');
+  const scheduleItems = document.querySelectorAll('.schedule-item');
+
+  searchInput.addEventListener('input', () => {
+    const searchTerm = searchInput.value.toLowerCase();
+    scheduleItems.forEach(item => {
+      const categories = item.dataset.categories.toLowerCase();
+      if (categories.includes(searchTerm) || item.classList.contains('break')) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>

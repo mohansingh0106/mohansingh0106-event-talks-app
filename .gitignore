@@ -1,0 +1,17 @@
+# Node.js
+node_modules/
+npm-debug.log*
+.env
+
+# macOS
+.DS_Store
+
+# Build artifacts
+build/
+dist/
+
+# Gemini CLI
+.gemini/
+
+# Project-specific dynamic files
+data.json
